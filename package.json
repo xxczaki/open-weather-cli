@@ -1,0 +1,31 @@
+{
+  "name": "open-weather-cli",
+  "version": "1.0.0",
+  "description": "CLI for obtaining weather information",
+  "main": "cli.js",
+  "bin": {
+    "weather": "cli.js"
+  },
+  "scripts": {
+    "test": "xo"
+  },
+  "keywords": [
+    "open-weather-cli",
+    "weather",
+    "cli",
+    "forecast",
+    "nodejs",
+    "node",
+    "app",
+    "terminal",
+    "openweathermap"
+  ],
+  "author": "Antoni Kepinski <a@kepinski.me> (https://kepinski.me)",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^2.4.1",
+    "got": "^9.2.2",
+    "meow": "^5.0.0",
+    "ora": "^3.0.0"
+  }
+}
