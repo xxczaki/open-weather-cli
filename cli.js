@@ -21,11 +21,6 @@ const cli = meow(`
 	  $ weather -l Prague -u imperial
 `, {
 	flags: {
-		location: {
-			type: 'string',
-			alias: 'l',
-			default: 'Boston'
-		},
 		units: {
 			type: 'string',
 			alias: 'u',
@@ -40,8 +35,10 @@ spinner.start('Fetching data...');
 
 (async () => {
 	try {
+		const location = cli.input.join(' ') || 'Boston';
+
 		// Fetch data from openweathermap api
-		const response = await got(`https://api.openweathermap.org/data/2.5/weather?q=${cli.flags.location}&units=${cli.flags.units}&APPID=a40636258ec257059436a5ac207bc5ac`, {json: true});
+		const response = await got(`https://api.openweathermap.org/data/2.5/weather?q=${location}&units=${cli.flags.units}&APPID=a40636258ec257059436a5ac207bc5ac`, {json: true});
 
 		// Generate weather report
 		spinner.succeed('Weather report:\n');
