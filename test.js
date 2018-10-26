@@ -17,7 +17,7 @@ test('Version number', async t => {
 });
 
 test('Custom location', async t => {
-	const ret = await execa.shell('node cli.js --location Poznan');
+	const ret = await execa.shell('node cli.js --location "Poznan"');
 	t.regex(ret.stdout, /Temperature/);
 });
 

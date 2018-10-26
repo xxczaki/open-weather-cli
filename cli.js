@@ -17,8 +17,8 @@ const cli = meow(`
       --units, -u       Specify units (imperial or metrics)
 
 	Examples
-	  $ weather --location New York
-	  $ weather -l Prague -u imperial
+	  $ weather --location "New York"
+	  $ weather -l "Prague" -u imperial
 `, {
 	flags: {
 		location: {
