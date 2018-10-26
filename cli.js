@@ -7,6 +7,7 @@ const chalk = require('chalk');
 const got = require('got');
 const Ora = require('ora');
 
+// Meow configuration
 const cli = meow(`
 	Usage
 	  $ weather <options>
@@ -23,7 +24,7 @@ const cli = meow(`
 		location: {
 			type: 'string',
 			alias: 'l',
-			default: 'Tulce'
+			default: 'Boston'
 		},
 		units: {
 			type: 'string',
@@ -39,8 +40,10 @@ spinner.start('Fetching data...');
 
 (async () => {
 	try {
+		// Fetch data from openweathermap api
 		const response = await got(`https://api.openweathermap.org/data/2.5/weather?q=${cli.flags.location}&units=${cli.flags.units}&APPID=a40636258ec257059436a5ac207bc5ac`, {json: true});
 
+		// Generate weather report
 		spinner.succeed('Weather report:\n');
 
 		console.log(`${chalk.green.bold(response.body.name)}\n`);
@@ -57,5 +60,6 @@ spinner.start('Fetching data...');
 		console.log(`Wind speed: ${response.body.wind.speed} km/h\n`);
 	} catch (error) {
 		spinner.fail('Something went wrong!');
+		process.exit(1);
 	}
 })();

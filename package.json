@@ -1,13 +1,13 @@
 {
   "name": "open-weather-cli",
   "version": "1.0.0",
-  "description": "CLI for obtaining weather information",
+  "description": "CLI for fetching weather forecast using openweathermap api",
   "main": "cli.js",
   "bin": {
     "weather": "cli.js"
   },
   "scripts": {
-    "test": "xo"
+    "test": "xo && ava"
   },
   "keywords": [
     "open-weather-cli",
@@ -27,5 +27,10 @@
     "got": "^9.2.2",
     "meow": "^5.0.0",
     "ora": "^3.0.0"
+  },
+  "devDependencies": {
+    "ava": "*",
+    "execa": "^1.0.0",
+    "xo": "*"
   }
 }
