@@ -28,7 +28,7 @@ npm install --global open-weather-cli
        --units, -u       Specify units (imperial or metrics)
 
   Examples
-    $ weather --location New York
+    $ weather --location "New York"
     $ weather -l Prague -u imperial
 ```
 
