@@ -1,6 +1,6 @@
 {
   "name": "open-weather-cli",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "CLI for fetching weather forecast using openweathermap api",
   "main": "cli.js",
   "bin": {
@@ -24,7 +24,7 @@
   "license": "MIT",
   "dependencies": {
     "chalk": "^2.4.1",
-    "got": "^9.2.2",
+    "got": "^9.3.1",
     "meow": "^5.0.0",
     "ora": "^3.0.0"
   },

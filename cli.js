@@ -10,15 +10,14 @@ const Ora = require('ora');
 // Meow configuration
 const cli = meow(`
 	Usage
-	  $ weather <options>
+	  $ weather <location> <options>
 
     Options
-      --location, -l    Specify location
       --units, -u       Specify units (imperial or metrics)
 
 	Examples
-	  $ weather --location "New York"
-	  $ weather -l "Prague" -u imperial
+	  $ weather New York
+	  $ weather Boston --units imperial
 `, {
 	flags: {
 		units: {
