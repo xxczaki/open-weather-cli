@@ -30,8 +30,3 @@ test('Use imperial units', async t => {
 	const ret = await execa.shell('node cli.js --units imperial');
 	t.regex(ret.stdout, /Fahrenheit/);
 });
-
-test('Error message', async t => {
-	const error = await t.throws(execa.shell('node cli.js -l foobar'));
-	t.regex(error.message, /Something went wrong!/);
-});
